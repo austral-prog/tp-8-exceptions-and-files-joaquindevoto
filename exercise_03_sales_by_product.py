@@ -41,7 +41,6 @@ def read_sales(filename):
                     if v != "":
                         producto, valor = v.split(":")
                         if producto in diccionario:
-                         diccionario[producto] =[float(valor)]
                          diccionario[producto].append(float(valor))
                         else:
                             diccionario[producto] = [float(valor)]

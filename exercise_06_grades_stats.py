@@ -41,15 +41,15 @@ def grades_stats(filename):
             for linea in archivo:
                 linea_limpia= linea.strip()
                 if linea_limpia !="":
-                    nombre, notas= split(":")
+                    nombre, notas= linea_limpia.split(":")
                     lista_notas = notas.split(",")
                     notas_numeros= []
                     for n in lista_notas:
                         notas_numeros.append(float(n))
-            promedio= sum(notas_numeros)/ len(notas_numeros)
-            maximo = max(notas_numeros)
-            minimo= min(notas_numeros)
-            dicc[nombre]= (promedio, maximo, minimo)
+                    promedio= sum(notas_numeros)/ len(notas_numeros)
+                    maximo = max(notas_numeros)
+                    minimo= min(notas_numeros)
+                    dicc[nombre]= (promedio, maximo, minimo)
         return dicc
 
     except FileNotFoundError:
